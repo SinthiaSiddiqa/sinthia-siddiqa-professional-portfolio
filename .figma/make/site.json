@@ -1,0 +1,11 @@
+{
+  "title": "Sinthia Siddiqa | Full-Stack Business Software Engineer",
+  "description": "Full-Stack Business Software Engineer and Web Application Developer specializing in business websites, web applications, business software, UI/UX and AI-driven solutions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
