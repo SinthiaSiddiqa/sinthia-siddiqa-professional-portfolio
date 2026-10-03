@@ -1,0 +1,24 @@
+:root {
+  --black: #0a0a09;
+  --black-soft: #11110f;
+  --surface: #161613;
+  --surface-light: #1d1d19;
+
+  --white: #f5f3ed;
+  --white-soft: #d9d6cc;
+  --muted: #96938a;
+
+  --gold: #c9a45c;
+  --gold-light: #e0bd78;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-gold: rgba(201, 164, 92, 0.3);
+
+  --container: 1240px;
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  --transition: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
