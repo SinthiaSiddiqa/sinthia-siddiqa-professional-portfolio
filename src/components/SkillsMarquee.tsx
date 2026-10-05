@@ -209,10 +209,10 @@ export default function SkillsMarquee() {
     skillCategories[0];
 
   return (
-    <section id="skills" className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+    <section id="skills" className="py-20 sm:py-24 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="editorial-badge mb-4">
             <span>TECHNICAL PROFICIENCY</span>
           </div>
@@ -223,71 +223,74 @@ export default function SkillsMarquee() {
             Proven modern web languages, frontend libraries, server frameworks, and relational databases.
           </p>
         </div>
-      </div>
 
-      {/* SIGNATURE TWO-ROW MARQUEE (Continuous Left→Right & Right→Left with Colorful Icons) */}
-      <div className="w-full overflow-hidden marquee-pause py-4 space-y-4 relative">
-        {/* Row 1: Moves Left → Right */}
-        <div className="flex overflow-hidden">
-          <div className="marquee-ltr-track flex gap-3 sm:gap-4 items-center">
-            {loopRow1.map((skill, idx) => (
-              <div
-                key={`r1-${skill.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/8 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
-              >
+        {/* SIGNATURE TWO-ROW MARQUEE (Contained inside centered max-w-7xl boundary) */}
+        <div className="w-full overflow-hidden marquee-pause py-2 space-y-3.5 relative rounded-2xl">
+          {/* Edge fade masks inside container */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-14 bg-gradient-to-r from-[#FAF7F4] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-14 bg-gradient-to-l from-[#FAF7F4] to-transparent z-10 pointer-events-none" />
+
+          {/* Row 1: Moves Left → Right */}
+          <div className="flex overflow-hidden">
+            <div className="marquee-ltr-track flex gap-3 sm:gap-4 items-center">
+              {loopRow1.map((skill, idx) => (
                 <div
-                  className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: skill.bgTint }}
+                  key={`r1-${skill.name}-${idx}`}
+                  className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/8 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
                 >
-                  <BrandSkillIcon type={skill.iconType} />
+                  <div
+                    className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: skill.bgTint }}
+                  >
+                    <BrandSkillIcon type={skill.iconType} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
+                      {skill.name}
+                    </span>
+                    <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
+                      {skill.category}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
-                    {skill.name}
-                  </span>
-                  <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
-                    {skill.category}
-                  </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2: Moves Right → Left */}
+          <div className="flex overflow-hidden">
+            <div className="marquee-rtl-track flex gap-3 sm:gap-4 items-center">
+              {loopRow2.map((skill, idx) => (
+                <div
+                  key={`r2-${skill.name}-${idx}`}
+                  className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/10 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
+                >
+                  <div
+                    className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: skill.bgTint }}
+                  >
+                    <BrandSkillIcon type={skill.iconType} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
+                      {skill.name}
+                    </span>
+                    <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
+                      {skill.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Row 2: Moves Right → Left */}
-        <div className="flex overflow-hidden">
-          <div className="marquee-rtl-track flex gap-3 sm:gap-4 items-center">
-            {loopRow2.map((skill, idx) => (
-              <div
-                key={`r2-${skill.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/10 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
-              >
-                <div
-                  className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: skill.bgTint }}
-                >
-                  <BrandSkillIcon type={skill.iconType} />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
-                    {skill.name}
-                  </span>
-                  <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
-                    {skill.category}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* COMPACT SKILL CATEGORIES BELOW MARQUEE */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="editorial-card p-8 sm:p-10 bg-white">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#171717]/8">
-            <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#6E1423]">
+        {/* COMPACT SKILL CATEGORIES BELOW MARQUEE */}
+        <div className="mt-12 sm:mt-14">
+          <div className="editorial-card p-6 sm:p-8 md:p-10 bg-white">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-[#171717]/8">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#6E1423]">
                 SYSTEMATIC TAXONOMY
               </span>
               <h3 className="font-['Space_Grotesk'] text-xl sm:text-2xl font-bold text-[#171717] mt-1">
@@ -342,6 +345,7 @@ export default function SkillsMarquee() {
             </div>
           </motion.div>
         </div>
+      </div>
       </div>
     </section>
   );

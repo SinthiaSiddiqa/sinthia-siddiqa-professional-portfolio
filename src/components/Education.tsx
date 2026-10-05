@@ -31,7 +31,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24"
+      className="py-20 sm:py-24 bg-white relative overflow-hidden scroll-mt-24"
     >
       {/* Subtle Background Accent */}
       <div
@@ -41,7 +41,7 @@ export default function Education() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-14">
           <div className="editorial-badge mb-4">
             <span>ACADEMIC FOUNDATION</span>
           </div>

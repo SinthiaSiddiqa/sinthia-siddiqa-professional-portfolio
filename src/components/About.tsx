@@ -11,7 +11,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <section id="about" className="py-20 sm:py-24 bg-white relative overflow-hidden scroll-mt-24">
       {/* Background Subtle Gradient */}
       <div
         className="absolute top-0 right-0 w-80 h-80 bg-[#6E1423]/3 rounded-full blur-3xl pointer-events-none"
@@ -20,7 +20,7 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-14">
           <div className="editorial-badge mb-4">
             <span>ABOUT &amp; PHILOSOPHY</span>
           </div>

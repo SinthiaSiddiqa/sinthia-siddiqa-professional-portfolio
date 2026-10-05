@@ -29,7 +29,7 @@ export default function ProfessionalGrowth() {
   return (
     <section
       id="growth"
-      className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24"
+      className="py-20 sm:py-24 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24"
     >
       {/* Decorative Glow */}
       <div
@@ -43,7 +43,7 @@ export default function ProfessionalGrowth() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-14 gap-6">
           <div className="max-w-2xl">
             <div className="editorial-badge mb-4">
               <span>CAREER &amp; TECHNICAL EXCELLENCE</span>

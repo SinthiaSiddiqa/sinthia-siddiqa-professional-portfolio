@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import ssLogo from "../assets/sinthia-logo.jpg";
@@ -9,6 +9,9 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  const isClickingRef = useRef(false);
+  const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,39 +24,48 @@ export default function Navbar() {
         setScrollProgress((window.scrollY / totalScroll) * 100);
       }
 
+      // If user clicked a nav link and smooth scrolling is underway, do not override active state
+      if (isClickingRef.current) return;
+
       // Check for bottom of page (snap to contact)
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 70) {
         setActiveSection("contact");
         return;
       }
 
       // Check for top of page (snap to home)
-      if (window.scrollY < 160) {
+      if (window.scrollY < 120) {
         setActiveSection("home");
         return;
       }
 
-      // Active section detection based on section top offsets
-      const sectionIds = navigation.map((item) => item.href.replace("#", ""));
-      const scrollPos = window.scrollY + 180;
+      // Focal point line in viewport (~30% from the top)
+      const focalY = Math.min(260, window.innerHeight * 0.35);
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const id = sectionIds[i];
+      const sectionIds = navigation.map((item) => item.href.replace("#", ""));
+      let currentSection = sectionIds[0];
+
+      for (const id of sectionIds) {
         const element = document.getElementById(id);
         if (element) {
-          const top = element.offsetTop;
-          if (scrollPos >= top) {
-            setActiveSection(id);
-            return;
+          const rect = element.getBoundingClientRect();
+          // If the top of the section is at or above the focal line, it's currently in view or passed
+          if (rect.top <= focalY) {
+            currentSection = id;
           }
         }
       }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+    };
   }, []);
 
   const handleNavClick = (
@@ -63,8 +75,15 @@ export default function Navbar() {
     e.preventDefault();
     const id = href.replace("#", "");
     const element = document.getElementById(id);
+
+    // Set active section immediately and lock scroll-spy during smooth scroll
     setActiveSection(id);
     setMobileMenuOpen(false);
+    isClickingRef.current = true;
+    if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+    clickTimeoutRef.current = setTimeout(() => {
+      isClickingRef.current = false;
+    }, 850);
 
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

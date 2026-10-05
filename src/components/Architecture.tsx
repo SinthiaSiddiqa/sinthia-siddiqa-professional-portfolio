@@ -28,7 +28,7 @@ export default function Architecture() {
     architectureLayers[1];
 
   return (
-    <section id="architecture" className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
+    <section id="architecture" className="py-20 sm:py-24 bg-white relative overflow-hidden scroll-mt-24">
       {/* Decorative Blur */}
       <div
         className="absolute top-1/3 right-0 w-80 h-80 bg-[#B08D57]/4 rounded-full blur-3xl pointer-events-none"
@@ -37,7 +37,7 @@ export default function Architecture() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 sm:mb-14">
           <div className="editorial-badge mb-4">
             <span>SIGNATURE ARCHITECTURE FEATURE</span>
           </div>

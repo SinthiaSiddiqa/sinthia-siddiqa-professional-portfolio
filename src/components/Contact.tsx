@@ -15,7 +15,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-white relative overflow-hidden scroll-mt-24">
+    <section id="contact" className="py-20 sm:py-24 bg-white relative overflow-hidden scroll-mt-24">
       {/* Decorative Warm Maroon Glow */}
       <div
         className="absolute bottom-0 right-10 w-96 h-96 bg-[#6E1423]/5 rounded-full blur-3xl pointer-events-none"
