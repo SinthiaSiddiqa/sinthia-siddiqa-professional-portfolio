@@ -6,12 +6,9 @@ export interface NavItem {
 export const navigation: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Workflow", href: "#workflow" },
-  { label: "Projects", href: "#projects" },
-  { label: "Architecture", href: "#architecture" },
-  { label: "Journey", href: "#journey" },
   { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
   { label: "Education", href: "#education" },
+  { label: "Professional Growth", href: "#growth" },
   { label: "Contact", href: "#contact" },
 ];

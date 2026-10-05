@@ -209,7 +209,7 @@ export default function SkillsMarquee() {
     skillCategories[0];
 
   return (
-    <section id="skills" className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden">
+    <section id="skills" className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
         {/* Section Header */}
         <div className="max-w-3xl">
@@ -219,7 +219,7 @@ export default function SkillsMarquee() {
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
             Skills &amp; Technology Stack
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#171717]/70 leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-[#171717]/80 leading-relaxed font-normal">
             Proven modern web languages, frontend libraries, server frameworks, and relational databases.
           </p>
         </div>
@@ -245,7 +245,7 @@ export default function SkillsMarquee() {
                   <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
                     {skill.name}
                   </span>
-                  <span className="text-[10px] text-[#171717]/50 font-medium tracking-wide">
+                  <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
                     {skill.category}
                   </span>
                 </div>
@@ -260,7 +260,7 @@ export default function SkillsMarquee() {
             {loopRow2.map((skill, idx) => (
               <div
                 key={`r2-${skill.name}-${idx}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/8 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
+                className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-[#171717]/10 shadow-2xs hover:shadow-md hover:border-[#6E1423]/30 transition-all duration-200 cursor-default flex-shrink-0"
               >
                 <div
                   className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -272,7 +272,7 @@ export default function SkillsMarquee() {
                   <span className="font-['Space_Grotesk'] text-sm font-bold text-[#171717] tracking-tight">
                     {skill.name}
                   </span>
-                  <span className="text-[10px] text-[#171717]/50 font-medium tracking-wide">
+                  <span className="text-[10px] text-[#171717]/65 font-semibold tracking-wide">
                     {skill.category}
                   </span>
                 </div>

@@ -27,7 +27,7 @@ export default function Workflow() {
   ];
 
   return (
-    <section id="workflow" className="py-24 sm:py-28 bg-white relative overflow-hidden">
+    <section id="workflow" className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
       {/* Editorial Decorative Background */}
       <div
         className="absolute top-1/2 left-0 w-96 h-96 bg-[#6E1423]/4 rounded-full blur-3xl pointer-events-none -translate-y-1/2"
@@ -43,7 +43,7 @@ export default function Workflow() {
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
             From Business Process to Digital System
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#171717]/70 leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-[#171717]/80 leading-relaxed font-normal">
             Modern enterprise applications transform fragmented manual handoffs into one unified, automated data pipeline. Here is how each operational phase connects across the entire business lifecycle:
           </p>
         </div>

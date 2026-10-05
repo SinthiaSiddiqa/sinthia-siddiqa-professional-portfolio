@@ -7,6 +7,19 @@ import { navigation } from "../data/navigation";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <footer className="bg-[#171717] text-white pt-16 pb-12 border-t border-white/10 relative overflow-hidden">
       {/* Subtle background ambient gradients */}
@@ -41,10 +54,10 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-sm text-white/70 max-w-md font-normal leading-relaxed">
+            <p className="text-sm text-white/80 max-w-md font-normal leading-relaxed">
               {profile.role}
             </p>
-            <p className="text-xs text-white/50 max-w-sm leading-relaxed">
+            <p className="text-xs text-white/60 max-w-sm leading-relaxed">
               Engineering modern business web applications, custom ERP modules, and user-centric digital experiences with clean architecture.
             </p>
           </div>
@@ -54,12 +67,13 @@ export default function Footer() {
             <p className="text-xs font-mono font-bold tracking-wider text-[#B08D57] uppercase">
               Navigation
             </p>
-            <ul className="space-y-2 text-sm text-white/70">
+            <ul className="space-y-2 text-sm text-white/75">
               {navigation.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="hover:text-white transition-colors duration-150 inline-flex items-center gap-1 group"
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="hover:text-white transition-colors duration-150 inline-flex items-center gap-1 group cursor-pointer"
                   >
                     <span>{item.label}</span>
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B08D57] text-xs">
@@ -79,7 +93,7 @@ export default function Footer() {
             <div className="space-y-2.5">
               <a
                 href={profile.links.email}
-                className="flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <Mail className="w-4 h-4 text-[#B08D57]" />
                 <span className="truncate">{profile.email}</span>
@@ -89,7 +103,7 @@ export default function Footer() {
                 href={profile.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <LinkedinIcon className="w-4 h-4 text-[#0A66C2]" />
                 <span>LinkedIn</span>
@@ -100,7 +114,7 @@ export default function Footer() {
                 href={profile.links.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <FacebookIcon className="w-4 h-4 text-[#1877F2]" />
                 <span>Facebook</span>
@@ -111,7 +125,7 @@ export default function Footer() {
                 href={profile.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-white/75 hover:text-white transition-colors group"
+                className="flex items-center gap-2.5 text-sm text-white/80 hover:text-white transition-colors group"
               >
                 <GithubIcon className="w-4 h-4 text-white" />
                 <span>GitHub</span>

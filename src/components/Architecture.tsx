@@ -28,7 +28,7 @@ export default function Architecture() {
     architectureLayers[1];
 
   return (
-    <section id="architecture" className="py-24 sm:py-28 bg-white relative overflow-hidden">
+    <section id="architecture" className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
       {/* Decorative Blur */}
       <div
         className="absolute top-1/3 right-0 w-80 h-80 bg-[#B08D57]/4 rounded-full blur-3xl pointer-events-none"
@@ -44,7 +44,7 @@ export default function Architecture() {
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
             Full-Stack Application Architecture
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#171717]/70 leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-[#171717]/80 leading-relaxed font-normal">
             An educational breakdown of how I architect end-to-end web applications and business systems for scale, reliability, and security.
           </p>
         </div>

@@ -11,7 +11,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 sm:py-28 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24">
       {/* Background Subtle Gradient */}
       <div
         className="absolute top-0 right-0 w-80 h-80 bg-[#6E1423]/3 rounded-full blur-3xl pointer-events-none"
@@ -27,7 +27,7 @@ export default function About() {
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
             Engineering With Design Thinking
           </h2>
-          <p className="mt-5 text-base sm:text-lg text-[#171717]/70 leading-relaxed font-normal">
+          <p className="mt-5 text-base sm:text-lg text-[#171717]/80 leading-relaxed font-normal">
             {profile.about}
           </p>
         </div>

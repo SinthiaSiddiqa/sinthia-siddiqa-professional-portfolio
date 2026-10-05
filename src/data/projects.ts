@@ -1,3 +1,5 @@
+import erpImg from "../assets/erp-showcase.png";
+
 export type ProjectCategory =
   | "All"
   | "Business Software"
@@ -110,7 +112,7 @@ export const projects: Project[] = [
     ],
     previewType: "erp",
     hasRealImage: true,
-    image: "/src/assets/erp-showcase.png",
+    image: erpImg,
     github: "https://github.com/SinthiaSiddiqa",
   },
   {

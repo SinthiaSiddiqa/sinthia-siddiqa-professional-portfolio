@@ -2,13 +2,13 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustStrip from "./components/TrustStrip";
 import About from "./components/About";
+import SkillsMarquee from "./components/SkillsMarquee";
 import Services from "./components/Services";
 import Workflow from "./components/Workflow";
 import Projects from "./components/Projects";
 import Architecture from "./components/Architecture";
-import Journey from "./components/Journey";
 import Education from "./components/Education";
-import SkillsMarquee from "./components/SkillsMarquee";
+import ProfessionalGrowth from "./components/ProfessionalGrowth";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
@@ -19,18 +19,18 @@ export default function App() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections with Deterministic DOM Order */}
       <main>
         <Hero />
         <TrustStrip />
         <About />
+        <SkillsMarquee />
         <Services />
         <Workflow />
         <Projects />
         <Architecture />
-        <Journey />
         <Education />
-        <SkillsMarquee />
+        <ProfessionalGrowth />
         <Contact />
       </main>
 

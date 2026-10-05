@@ -15,7 +15,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-white relative overflow-hidden">
+    <section id="contact" className="py-24 sm:py-32 bg-white relative overflow-hidden scroll-mt-24">
       {/* Decorative Warm Maroon Glow */}
       <div
         className="absolute bottom-0 right-10 w-96 h-96 bg-[#6E1423]/5 rounded-full blur-3xl pointer-events-none"
@@ -35,7 +35,7 @@ export default function Contact() {
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-base sm:text-xl text-[#171717]/70 font-normal leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-base sm:text-xl text-[#171717]/80 font-normal leading-relaxed max-w-2xl mx-auto mb-10">
             Let's turn your idea into a thoughtful, functional and modern digital experience.
           </p>
 

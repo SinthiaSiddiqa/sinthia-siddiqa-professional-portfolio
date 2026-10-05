@@ -1,44 +1,55 @@
-import { GraduationCap, Award, BookOpen, Calendar } from "lucide-react";
+import { GraduationCap, Calendar, BookOpen, Award, Building2 } from "lucide-react";
 
 export default function Education() {
   const degrees = [
     {
       degree: "MSc in Computer Science & Engineering",
       institution: "Daffodil International University",
-      period: "Fall 2026 · Enrolled / Advanced Research",
-      status: "Advanced Postgraduate Study",
+      period: "Fall 2026 – Present · Enrolled / Advanced Research",
+      status: "POSTGRADUATE DEGREE",
+      majorFocus: "Scalable Software Systems & Intelligent Computing",
       highlights: [
-        "Specialized focus on scalable software systems & web architectures",
-        "Graduate research in intelligent computing and machine learning",
-        "Advanced software engineering methodologies",
+        "Advanced graduate specialization in scalable software architectures & distributed web systems",
+        "Graduate research in machine learning algorithms, model interpretability & intelligent decision support",
+        "Advanced software engineering methodologies, design patterns & cloud architecture",
       ],
     },
     {
       degree: "BSc in Computer Science & Engineering",
       institution: "Daffodil International University",
       period: "Completed 2026",
-      status: "Undergraduate Degree",
+      status: "UNDERGRADUATE DEGREE",
+      majorFocus: "Core Computer Science, Full-Stack Development & Applied AI",
       highlights: [
-        "Rigorous foundation in computer science, algorithms & data structures",
-        "Full-stack web application development & database systems",
-        "Final Year Research Project on ML-driven health risk prediction",
+        "Rigorous foundation in computer science theory, algorithms, object-oriented programming & data structures",
+        "Full-stack web application development, database management systems (SQL) & RESTful service engineering",
+        "Final Year Research Project on ML-driven physical and mental health risk prediction with explainability",
       ],
     },
   ];
 
   return (
-    <section id="education" className="py-24 sm:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="education"
+      className="py-24 sm:py-28 bg-white relative overflow-hidden scroll-mt-24"
+    >
+      {/* Subtle Background Accent */}
+      <div
+        className="absolute top-0 right-1/4 w-96 h-96 bg-[#6E1423]/3 rounded-full blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="editorial-badge mb-4">
             <span>ACADEMIC FOUNDATION</span>
           </div>
           <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
-            Formal Education &amp; Credentials
+            Academic Education
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#171717]/70 leading-relaxed font-normal">
-            Solid theoretical and practical academic preparation from Daffodil International University.
+          <p className="mt-4 text-base sm:text-lg text-[#171717]/75 leading-relaxed font-normal">
+            Formal university degree programs and scholarly engineering preparation from Daffodil International University.
           </p>
         </div>
 
@@ -47,15 +58,15 @@ export default function Education() {
           {degrees.map((item, index) => (
             <div
               key={item.degree}
-              className="editorial-card p-8 sm:p-10 flex flex-col justify-between relative group hover:border-[#6E1423]/30"
+              className="editorial-card p-8 sm:p-10 flex flex-col justify-between relative group hover:border-[#6E1423]/35 transition-all duration-300"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-xl bg-[#6E1423]/8 border border-[#6E1423]/20 flex items-center justify-center text-[#6E1423]">
                     <GraduationCap className="w-6 h-6" />
                   </div>
-                  <span className="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-[#FAF7F4] text-[#6E1423] border border-[#171717]/8">
-                    {index === 0 ? "POSTGRADUATE" : "UNDERGRADUATE"}
+                  <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#FAF7F4] text-[#6E1423] border border-[#6E1423]/20 shadow-2xs">
+                    {item.status}
                   </span>
                 </div>
 
@@ -64,19 +75,24 @@ export default function Education() {
                   <span>{item.period}</span>
                 </div>
 
-                <h3 className="font-['Space_Grotesk'] text-2xl font-bold text-[#171717] mb-1 group-hover:text-[#6E1423] transition-colors">
+                <h3 className="font-['Space_Grotesk'] text-2xl font-bold text-[#171717] mb-1.5 group-hover:text-[#6E1423] transition-colors">
                   {item.degree}
                 </h3>
 
-                <p className="font-['Space_Grotesk'] text-sm font-semibold text-[#171717]/70 mb-6">
-                  {item.institution}
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-[#171717]/80 mb-3">
+                  <Building2 className="w-4 h-4 text-[#6E1423]" />
+                  <span>{item.institution}</span>
+                </div>
+
+                <p className="text-xs font-semibold text-[#6E1423] mb-6">
+                  {item.majorFocus}
                 </p>
 
-                <ul className="space-y-2.5 pt-4 border-t border-[#171717]/6 text-xs sm:text-sm text-[#171717]/70">
+                <ul className="space-y-3 pt-5 border-t border-[#171717]/8 text-xs sm:text-sm text-[#171717]/80">
                   {item.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#6E1423] font-bold">✓</span>
-                      <span>{h}</span>
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="text-[#6E1423] font-bold mt-0.5">✓</span>
+                      <span className="leading-relaxed">{h}</span>
                     </li>
                   ))}
                 </ul>

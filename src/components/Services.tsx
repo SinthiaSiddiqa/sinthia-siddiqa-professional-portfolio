@@ -16,7 +16,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden">
+    <section id="services" className="py-24 sm:py-28 bg-[#FAF7F4] relative overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -27,7 +27,7 @@ export default function Services() {
             <h2 className="font-['Space_Grotesk'] text-3xl sm:text-4xl lg:text-5xl font-bold text-[#171717] tracking-tight leading-[1.15]">
               Tailored Digital Solutions for Modern Businesses
             </h2>
-            <p className="mt-4 text-base text-[#171717]/70 leading-relaxed font-normal">
+            <p className="mt-4 text-base text-[#171717]/80 leading-relaxed font-normal">
               High-standard frontend engineering, custom business platforms, and user-centered design crafted to solve operational bottlenecks and drive growth.
             </p>
           </div>
